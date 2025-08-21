@@ -1,0 +1,355 @@
+object MrkrFrm: TMrkrFrm
+  Left = 454
+  Height = 577
+  Top = 156
+  Width = 671
+  Caption = 'mrkr'
+  ClientHeight = 577
+  ClientWidth = 671
+  DesignTimePPI = 89
+  Menu = main_menu
+  LCLVersion = '4.99.0.0'
+  object gb_bookmarks: TGroupBox
+    Left = 0
+    Height = 577
+    Top = 0
+    Width = 277
+    Align = alLeft
+    Caption = 'Bookmarks:'
+    ClientHeight = 562
+    ClientWidth = 273
+    TabOrder = 0
+    object cb_filter_favorites: TCheckBox
+      Left = 0
+      Height = 21
+      Top = 0
+      Width = 273
+      Align = alTop
+      Caption = 'Filter favorites'
+      TabOrder = 0
+    end
+    object pc_views: TPageControl
+      Left = 0
+      Height = 541
+      Top = 21
+      Width = 273
+      ActivePage = ts_file_view
+      Align = alClient
+      TabIndex = 0
+      TabOrder = 1
+      object ts_file_view: TTabSheet
+        Caption = 'File'
+        ClientHeight = 514
+        ClientWidth = 269
+        object tv_file_bookmarks: TTreeView
+          Left = 0
+          Height = 489
+          Top = 25
+          Width = 269
+          Align = alClient
+          AutoExpand = True
+          ParentFont = False
+          PopupMenu = popup_menu
+          ScrollBars = ssNone
+          TabOrder = 0
+          Options = [tvoAutoExpand, tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
+          Items.Data = {
+            F9FFFFFF020001000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000
+            000000090000004661766F7269746573
+          }
+        end
+        object edt_file_search: TEdit
+          Left = 2
+          Height = 21
+          Top = 2
+          Width = 265
+          Align = alTop
+          BorderSpacing.Left = 2
+          BorderSpacing.Top = 2
+          BorderSpacing.Right = 2
+          BorderSpacing.Bottom = 2
+          TabOrder = 1
+          TextHint = 'Search...'
+        end
+      end
+      object ts_net_view: TTabSheet
+        Caption = 'Net'
+        ClientHeight = 514
+        ClientWidth = 269
+        object tv_url_bookmarks: TTreeView
+          Left = 0
+          Height = 489
+          Top = 25
+          Width = 269
+          Align = alClient
+          AutoExpand = True
+          ParentFont = False
+          PopupMenu = popup_menu
+          ScrollBars = ssNone
+          TabOrder = 0
+          Options = [tvoAutoExpand, tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
+          Items.Data = {
+            F9FFFFFF020001000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000
+            000000090000004661766F7269746573
+          }
+        end
+        object edt_url_search: TEdit
+          Left = 2
+          Height = 21
+          Top = 2
+          Width = 265
+          Align = alTop
+          BorderSpacing.Left = 2
+          BorderSpacing.Top = 2
+          BorderSpacing.Right = 2
+          BorderSpacing.Bottom = 2
+          TabOrder = 1
+          TextHint = 'Search...'
+        end
+      end
+      object ts_git_view: TTabSheet
+        Caption = 'Git'
+        ClientHeight = 514
+        ClientWidth = 269
+        object tv_git_bookmarks: TTreeView
+          Left = 0
+          Height = 489
+          Top = 25
+          Width = 269
+          Align = alClient
+          AutoExpand = True
+          ParentFont = False
+          PopupMenu = popup_menu
+          ScrollBars = ssNone
+          TabOrder = 0
+          Options = [tvoAutoExpand, tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
+          Items.Data = {
+            F9FFFFFF020001000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000
+            000000090000004661766F7269746573
+          }
+        end
+        object edt_git_search: TEdit
+          Left = 2
+          Height = 21
+          Top = 2
+          Width = 265
+          Align = alTop
+          BorderSpacing.Left = 2
+          BorderSpacing.Top = 2
+          BorderSpacing.Right = 2
+          BorderSpacing.Bottom = 2
+          TabOrder = 1
+          TextHint = 'Search...'
+        end
+      end
+    end
+  end
+  object splitter1: TSplitter
+    Left = 277
+    Height = 577
+    Top = 0
+    Width = 5
+  end
+  object gb_selected_bookmark: TGroupBox
+    Left = 282
+    Height = 577
+    Top = 0
+    Width = 389
+    Align = alClient
+    Caption = 'Selected bookmark:'
+    ClientHeight = 562
+    ClientWidth = 385
+    TabOrder = 2
+    object le_name: TLabeledEdit
+      AnchorSideLeft.Control = gb_selected_bookmark
+      AnchorSideRight.Control = gb_selected_bookmark
+      AnchorSideRight.Side = asrBottom
+      Left = 4
+      Height = 21
+      Top = 48
+      Width = 379
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 4
+      BorderSpacing.Right = 2
+      EditLabel.Height = 13
+      EditLabel.Width = 379
+      EditLabel.Caption = 'Name:'
+      TabOrder = 0
+    end
+    object le_url: TLabeledEdit
+      AnchorSideLeft.Control = gb_selected_bookmark
+      AnchorSideRight.Control = gb_selected_bookmark
+      AnchorSideRight.Side = asrBottom
+      Left = 4
+      Height = 21
+      Top = 88
+      Width = 379
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 4
+      BorderSpacing.Right = 2
+      EditLabel.Height = 13
+      EditLabel.Width = 379
+      EditLabel.Caption = 'URL:'
+      TabOrder = 1
+    end
+    object mem_description: TMemo
+      AnchorSideLeft.Control = gb_selected_bookmark
+      AnchorSideTop.Control = lbl_description
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = gb_selected_bookmark
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = gb_selected_bookmark
+      AnchorSideBottom.Side = asrBottom
+      Left = 4
+      Height = 395
+      Top = 165
+      Width = 379
+      Align = alCustom
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      BorderSpacing.Left = 4
+      BorderSpacing.Right = 2
+      BorderSpacing.Bottom = 2
+      TabOrder = 2
+    end
+    object le_tags: TLabeledEdit
+      AnchorSideLeft.Control = gb_selected_bookmark
+      AnchorSideRight.Control = gb_selected_bookmark
+      AnchorSideRight.Side = asrBottom
+      Left = 4
+      Height = 21
+      Top = 128
+      Width = 379
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 4
+      BorderSpacing.Right = 2
+      EditLabel.Height = 13
+      EditLabel.Width = 379
+      EditLabel.Caption = 'Tags:'
+      TabOrder = 3
+    end
+    object lbl_description: TLabel
+      AnchorSideLeft.Control = le_tags
+      Left = 4
+      Height = 13
+      Top = 152
+      Width = 51
+      Align = alCustom
+      Caption = 'Description:'
+    end
+    object cb_toggle_favorite: TCheckBox
+      Left = 0
+      Height = 21
+      Top = 0
+      Width = 385
+      Align = alTop
+      Caption = 'Toggle favorite'
+      TabOrder = 4
+    end
+  end
+  object main_menu: TMainMenu
+    Left = 48
+    Top = 184
+    object mi_file: TMenuItem
+      Caption = 'File'
+      object mi_save: TMenuItem
+        Caption = 'Save'
+      end
+      object mi_save_as: TMenuItem
+        Caption = 'Save as...'
+      end
+    end
+    object mi_bookmark: TMenuItem
+      Caption = 'Bookmark'
+      object mi_new_entry: TMenuItem
+        Caption = 'New entry...'
+      end
+      object mi_delete_entry: TMenuItem
+        Caption = 'Delete entry'
+        ShortCut = 46
+      end
+      object bm_separator1: TMenuItem
+        Caption = '-'
+      end
+      object mi_mark_as_favorite: TMenuItem
+        Caption = 'Mark as favorite'
+      end
+      object bm_separator2: TMenuItem
+        Caption = '-'
+      end
+      object mi_open_entry: TMenuItem
+        Caption = 'Open entry'
+      end
+      object mi_open_linked_entries: TMenuItem
+        Caption = 'Open linked entries'
+      end
+      object mi_recall_last_session: TMenuItem
+        Caption = 'Recall last session'
+      end
+    end
+    object mi_tools: TMenuItem
+      Caption = 'Tools'
+      object mi_options: TMenuItem
+        Caption = 'Options...'
+        OnClick = mi_options_click
+      end
+      object mi_wizards: TMenuItem
+        Caption = 'Wizards...'
+      end
+      object tm_separator1: TMenuItem
+        Caption = '-'
+      end
+      object mi_log: TMenuItem
+        Caption = 'Log...'
+      end
+    end
+    object mi_web: TMenuItem
+      Caption = 'Web'
+      object mi_save_page_wget: TMenuItem
+        Caption = 'Save page (wget)...'
+      end
+    end
+    object mi_help: TMenuItem
+      Caption = 'Help'
+      object mi_visit_home_page: TMenuItem
+        Caption = 'Visit home page'
+      end
+      object mi_update_application: TMenuItem
+        Caption = 'Update application'
+      end
+    end
+  end
+  object popup_menu: TPopupMenu
+    Left = 48
+    Top = 128
+    object pi_new_entry: TMenuItem
+      Caption = 'New entry...'
+    end
+    object pi_delete_entry: TMenuItem
+      Caption = 'Delete entry'
+    end
+    object pi_new_folder: TMenuItem
+      Caption = 'New folder...'
+    end
+    object pi_delete_folder: TMenuItem
+      Caption = 'Delete folder'
+    end
+    object pop_separator1: TMenuItem
+      Caption = '-'
+    end
+    object pi_mark_as_favorite: TMenuItem
+      Caption = 'Mark as favorite'
+    end
+    object pop_separator2: TMenuItem
+      Caption = '-'
+    end
+    object pi_open_entry: TMenuItem
+      Caption = 'Open entry'
+    end
+    object pi_open_linked_entries: TMenuItem
+      Caption = 'Open linked entries'
+    end
+    object pi_recall_last_session: TMenuItem
+      Caption = 'Recall last session'
+    end
+  end
+end
